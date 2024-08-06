@@ -1,6 +1,6 @@
 #pragma once
 #include <cstring>
-#include <endian.h>
+#include "endian.h" // endian.h file is not included in Windows by default
 #include <magic_enum.hpp>
 #include <string>
 #include <variant>

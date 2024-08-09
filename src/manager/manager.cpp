@@ -25,7 +25,6 @@ Manager::~Manager() {
     if (thread.joinable()) {
 #ifdef _WIN32
       WaitForSingleObject(thread.native_handle(), INFINITE);
-      CloseHandle(thread.native_handle());
 #else
       pthread_cancel(thread.native_handle());
 #endif 
@@ -69,7 +68,6 @@ void Manager::remove_bot(std::string username) {
     if (thread.joinable()) {
 #ifdef _WIN32
       WaitForSingleObject(thread.native_handle(), INFINITE);
-      CloseHandle(thread.native_handle());
 #else
       pthread_cancel(thread.native_handle());
 #endif 
